@@ -130,14 +130,20 @@ def handle_message(text: str, message_id: str):
 
 
 # ── Webhook ───────────────────────────────────────────────────────────────────
-@app.route("/webhook", methods=["POST"])
+@app.route("/webhook", methods=["GET", "POST"])
 def webhook():
-    data = request.json or {}
+    # 尝试多种方式解析请求体
+    try:
+        data = request.get_json(force=True, silent=True) or {}
+    except Exception:
+        data = {}
 
-    # 飞书 URL 验证
-    if data.get("type") == "url_verification":
-        challenge = data.get("challenge", "")
-        return jsonify({"challenge": challenge})
+    print(f"[Webhook] data={json.dumps(data)[:200]}")
+
+    # 飞书 URL 验证（两种格式都支持）
+    challenge = data.get("challenge")
+    if data.get("type") == "url_verification" or challenge:
+        return jsonify({"challenge": challenge or ""})
 
     # 验证 Token（可选，建议开启）
     if FEISHU_VERIFICATION_TOKEN:
