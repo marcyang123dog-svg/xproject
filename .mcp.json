@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "wechat": {
+      "command": "node",
+      "args": [
+        "/home/user/xproject/.claude/wechat-agent-channel/scripts/run-python.js",
+        "claude_channel.py"
+      ],
+      "cwd": "/home/user/xproject/.claude/wechat-agent-channel"
+    }
+  }
+}
