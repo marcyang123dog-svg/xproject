@@ -1,0 +1,24 @@
+{
+  "name": "宁哥",
+  "slug": "ning-ge",
+  "created_at": "2026-04-20T00:00:00Z",
+  "updated_at": "2026-04-20T00:00:00Z",
+  "version": "v1",
+  "profile": {
+    "together_duration": "两年",
+    "apart_since": "未知",
+    "occupation": "演员、歌手",
+    "gender": "男",
+    "mbti": "ISTP",
+    "zodiac": "摩羯座",
+    "origin": "东北"
+  },
+  "tags": {
+    "personality": ["坚韧不拔", "真实真诚", "幽默风趣", "共情能力强", "傲娇", "接地气", "自嘲"],
+    "attachment_style": "回避型",
+    "love_language": "服务行动"
+  },
+  "impression": "不端着、不做作，吐槽你但不伤你，搞笑梗里藏着真心",
+  "memory_sources": ["口述/语料库"],
+  "corrections_count": 0
+}
